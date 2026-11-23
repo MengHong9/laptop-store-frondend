@@ -1,0 +1,35 @@
+@import "tailwindcss";
+@import "@fontsource-variable/archivo/wdth.css";
+@import "@fontsource/ibm-plex-sans/400.css";
+@import "@fontsource/ibm-plex-sans/500.css";
+@import "@fontsource/ibm-plex-sans/600.css";
+
+@theme {
+  --font-display: "Archivo Variable", "Archivo", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  --color-chassis: #f3f5f9;
+  --color-panel: #ffffff;
+  --color-ink: #172033;
+  --color-ink-soft: #667085;
+  --color-line: #e4e8ef;
+  --color-bios: #3457d5;
+  --color-bios-deep: #243c9b;
+  --color-bios-soft: #e9edff;
+  --color-key: #dce5ff;
+  --color-ok: #17804f;
+  --color-bad: #b4372f;
+}
+@layer base {
+  html { font-family: var(--font-sans); background: #f5f7fb; color: #172033; }
+  body { min-height: 100vh; }
+  h1,h2,h3,.display { font-family: var(--font-display); font-weight: 700; letter-spacing: -.035em; }
+  :focus-visible { outline: 3px solid #91a8ff; outline-offset: 2px; }
+  button,a,select { cursor: pointer; }
+}
+@layer components {
+  .admin-main { min-width: 0; flex: 1; padding: 28px clamp(16px,3vw,40px); }
+  .soft-panel { border: 1px solid #e6eaf1; border-radius: 16px; background: white; box-shadow: 0 2px 8px rgba(20,35,70,.025); }
+  .nav-item { display:flex; align-items:center; gap:11px; border-radius:10px; padding:10px 12px; font-size:14px; font-weight:500; transition:all .16s ease; }
+  .nav-item:hover { background:rgba(255,255,255,.08); }
+  .nav-item.active { background:#e7edff; color:#2947b8; font-weight:600; }
+}
